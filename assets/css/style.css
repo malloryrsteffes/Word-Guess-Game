@@ -1,0 +1,12 @@
+body {
+    background: url(../images/footballfield.jpg);
+}
+
+.container {
+    background-color: white;
+}
+
+.row {
+    margin-bottom: 20%;
+    height: 400px;
+}
