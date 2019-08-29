@@ -19,18 +19,19 @@
         //Make the computer pick a random word from the words array
         var currentWord = words[Math.floor(Math.random() * words.length)];
         console.log(currentWord);
-        
+
         //Creates an array to show how many letters are in currentWord
         var currentWordLetters = [];
 
-        // Go through the array and show an underscore for each letter in the word 
+        // Go through the array and (for now) show an underscore for each letter in the word 
         //the computer chose from the words array
         for (i = 0; i < currentWord.length; i++) {
-            currentWordLetters[i] = "_";
+            currentWordLetters[i] = " _ ";
+            document.write(currentWordLetters[i])
         }
 
         // Create a variable that tells us how many letters are left
-        var lettersLeft = word.length;
+        var lettersLeft = currentWord.length;
 
 
     </script>
