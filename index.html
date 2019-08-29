@@ -46,12 +46,12 @@
 
         //Creates an array to show how many letters are in currentWord
         var currentWordLetters = [];
-
+        
         // Go through the array and show an underscore for each letter in the word 
         //the computer chose from the words array
         for (i = 0; i < currentWord.length; i++) {
             currentWordLetters[i] = " _ ";
-            document.querySelector("#underScores").innerHTML = currentWordLetters[i];
+            document.querySelector("#underScores").innerHTML = currentWordLetters.join("");
             // This only shows one underscore, and I'm not sure why. What's below worked!
 
             //document.write(currentWordLetters[i]) 
@@ -61,8 +61,7 @@
             
         }
 
-        // Create a variable that tells us how many letters are left
-        var lettersLeft = currentWord.length;
+       
 
 
     </script>
