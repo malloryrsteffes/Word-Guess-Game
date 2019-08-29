@@ -6,28 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
+    <link rel="stylsheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+    <header>
+        <h1>America's Sport Hangman Game</h1>
+        <h3>Do you know the player's last name?</h3>
+    </header>
+    <div class="container">
+        <p><span id="underScores"></span></p>
+        <p>Correct Guesses: <span id="correctGuesses"></span></p>
+        <p>Incorrect Guesses: <span id="incorrectGuesses"></span></p>
+        <p>Guesses Left: <span id="guessesLeft"></span></p>
+    </div>
 
     <!-- JavaScript -->
 
     <script>
-        // Make an array that lists the words the computer can choose from
+        // Creates variables 
+        var correctGuesses;
+        var incorrectGuesses;
+        var guessesLeft = 15;
+
+        // Creates an array that lists the words the computer can choose from
         const words = ["elliott", "brown", "beckham", "watt", "brady", "tebow", "rodgers", "wilson", "miller", "donald"];
 
-        //Make the computer pick a random word from the words array
+        // Creates a function to display the results to the page
+        function updateDisplay() {
+            document.querySelector("#correctGuesses").innerHTML = correctGuesses;
+            document.querySelector("#incorrectGuesses").innerHTML = incorrectGuesses;
+            document.querySelector("#guessesLeft").innerHTML = guessesLeft;
+        };
+
+        // Ceates the computer pick a random word from the words array
         var currentWord = words[Math.floor(Math.random() * words.length)];
         console.log(currentWord);
 
         //Creates an array to show how many letters are in currentWord
         var currentWordLetters = [];
 
-        // Go through the array and (for now) show an underscore for each letter in the word 
+        // Go through the array and show an underscore for each letter in the word 
         //the computer chose from the words array
         for (i = 0; i < currentWord.length; i++) {
             currentWordLetters[i] = " _ ";
-            document.write(currentWordLetters[i])
+            document.querySelector("#underScores").innerHTML = currentWordLetters[i];
+            // This only shows one underscore, and I'm not sure why. What's below worked!
+
+            //document.write(currentWordLetters[i]) 
+            
+            //This showed the correct # of underspaces before, but I'd like it to 
+            //go in the span!
+            
         }
 
         // Create a variable that tells us how many letters are left
