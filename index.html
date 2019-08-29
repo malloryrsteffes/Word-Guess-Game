@@ -52,7 +52,7 @@
 
         // Go through the array and show an underscore for each letter in the word 
         // the computer chose from the words array
-        for (i = 0; i < currentWord.length; i++) {
+        for (var i = 0; i < currentWord.length; i++) {
 
             currentWordLetters[i] = " _ ";
 
@@ -66,17 +66,29 @@
         // Starts the game as long as remaining letters >0 
         // by creating on onkey up event to grab the userGuess
 
-        //while (remainingLetters > 0) {
         document.onkeyup = function (event) {
             userGuess = event.key.toLowerCase;
             console.log(userGuess);
         
-        //if (userGuess ===)
+        //For some reason it's logging every keystroke as meeting this condition.
+        if (userGuess.length !== 1) {
+            console.log("Please guess one letter at a time!");
+        }
+
+        else {
+            for (var j = 0; j < currentWord.length; j++) {
+                if (currentWord[j] === userGuess) {
+                    currentWordLetters[j] = userGuess;
+                    remainingLetters--;
+                }
+            }
+
+        }
         
         
         }
 
-        //}
+        
 
 
 
